@@ -9,32 +9,33 @@ package:
 source:
   fn: mgsub_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/mgsub_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/mgsub/mgsub_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/mgsub_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/mgsub/mgsub_{{ version }}.tar.gz
   sha256: 79f3527e95082ef71dec665388d9b135f329c0dd9eabf5ad9ed9bb3df406840f
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('mgsub')"  # [not win]
+    - $R -e "library('mgsub')"           # [not win]
     - "\"%R%\" -e \"library('mgsub')\""  # [win]
 
 about:
-  home: https://cran.r-project.org/package=mgsub
+  home: https://CRAN.R-project.org/package=mgsub
   license: MIT
   summary: Designed to enable simultaneous substitution in strings in a safe fashion. Safe means
     it does not rely on placeholders (which can cause errors in same length matches).
@@ -42,9 +43,10 @@ about:
 
 extra:
   recipe-maintainers:
+    - CurtLH
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
     - cbrueffer
-    - CurtLH
+    - dbast

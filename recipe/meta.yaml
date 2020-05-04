@@ -1,4 +1,4 @@
-{% set version = '1.7.1' %}
+{% set version = "1.7.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -13,8 +13,8 @@ source:
   sha256: 71d75d34055ee5edeba3087c79d307d86624089d0a3bdc22ee319c789441636c
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -22,7 +22,7 @@ build:
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
   run:
@@ -36,10 +36,12 @@ test:
 about:
   home: https://CRAN.R-project.org/package=mgsub
   license: MIT
-  summary: Designed to enable simultaneous substitution in strings in a safe fashion. Safe means
-    it does not rely on placeholders (which can cause errors in same length matches).
+  summary: Designed to enable simultaneous substitution in strings in a safe fashion. Safe means it does not rely on placeholders (which can cause errors in same length matches).
   license_family: MIT
 
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 extra:
   recipe-maintainers:
     - conda-forge/r

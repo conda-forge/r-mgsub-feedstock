@@ -1,4 +1,4 @@
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mgsub_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mgsub/mgsub_{{ version }}.tar.gz
-  sha256: 71d75d34055ee5edeba3087c79d307d86624089d0a3bdc22ee319c789441636c
+  sha256: 399f23fd311c58c019248625cf875df50c10a1e3ecf1931850d18cfd4d5a810a
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/

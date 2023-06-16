@@ -1,11 +1,11 @@
-About r-mgsub
-=============
+About r-mgsub-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mgsub-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=mgsub
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mgsub-feedstock/blob/main/LICENSE.txt)
 
 Summary: Designed to enable simultaneous substitution in strings in a safe fashion. Safe means it does not rely on placeholders (which can cause errors in same length matches).
 

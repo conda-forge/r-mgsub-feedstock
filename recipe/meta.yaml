@@ -1,4 +1,4 @@
-{% set version = "1.7.3" %}
+{% set version = "2.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mgsub_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mgsub/mgsub_{{ version }}.tar.gz
-  sha256: c9ae2560fe2690bedc5248af3fc89e7ef2bc6c147d46ced28f9824584c3791d5
+  sha256: 65217ae359c8aa3c2d72f23d8c846bf5f2d7a7a97c4f1beff4cac56e6854695a
 
 build:
-  number: 4
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
